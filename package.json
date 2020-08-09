@@ -19,6 +19,7 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.2.25",
     "gatsby-source-filesystem": "^2.1.26",
+    "gatsby-source-graphql-universal": "^3.3.0",
     "gatsby-source-prismic-graphql": "3.4.0-beta.1",
     "gatsby-transformer-sharp": "^2.2.16",
     "node-sass": "^4.12.0",
