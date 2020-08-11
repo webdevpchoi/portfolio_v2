@@ -10,6 +10,7 @@ import Button from "components/_ui/Button";
 import About from "components/About";
 import Layout from "components/Layout";
 import ProjectCard from "components/ProjectCard";
+import resume from '../../Phillip-Choi-Resume.pdf';
 
 const Hero = styled("div")`
     padding-top: 2.5em;
@@ -146,14 +147,15 @@ const RenderBody = ({ home, projects, meta }) => (
             <>
                 {RichText.render(home.hero_title)}
             </>
-            <a href={home.hero_button_link.url}
-               target="_blank" rel="noopener noreferrer">
+            <a href={resume}
+               target="_blank" download rel="noopener noreferrer">
                 <Button>
                     {RichText.render(home.hero_button_text)}
                 </Button>
             </a>
         </Hero>
         <Section>
+            <h1>Clients I've worked with...</h1>
             {projects.map((project, i) => (
                 <ProjectCard
                     key={i}
@@ -165,7 +167,7 @@ const RenderBody = ({ home, projects, meta }) => (
                 />
             ))}
             <WorkAction to={"/work"}>
-                See more work <span>&#8594;</span>
+                See more! <span>&#8594;</span>
             </WorkAction>
         </Section>
         <Section>

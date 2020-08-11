@@ -3,7 +3,7 @@ import dimensions from "styles/dimensions";
 
 const typeStyles = css`
     h1 {
-        font-size: 2.8em;
+        font-size: 2.6em;
         line-height: 1.45;
         font-weight: 800;
 
