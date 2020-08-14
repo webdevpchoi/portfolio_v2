@@ -5,9 +5,12 @@
   "version": "0.1.0",
   "author": "Marguerite Roth | marguerite.io | marguerite.roth@gmail.com",
   "dependencies": {
+    "-": "0.0.1",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
+    "g": "^2.0.1",
     "gatsby": "^2.12.0",
+    "gatsby-cli": "^2.12.87",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-catch-links": "^2.0.12",
     "gatsby-plugin-emotion": "^4.1.0",

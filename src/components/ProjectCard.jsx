@@ -122,8 +122,7 @@ const ProjectCardImageContainer = styled("div")`
     align-items: flex-end;
     overflow: hidden;
     position: relative;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding: 1rem 2rem 0;
 
     @media(max-width:${dimensions.maxwidthTablet}px) {
         padding-top: 3em;
