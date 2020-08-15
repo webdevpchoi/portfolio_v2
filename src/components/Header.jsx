@@ -50,7 +50,7 @@ const HeaderLinks = styled("div")`
             width: 18px;
             height: 3px;
             background: transparent;
-            bottom: -3px;
+            bottom: 15px;
             right: 50%;
             margin-right: -9px;
             transition: 100ms ease-in-out background;
