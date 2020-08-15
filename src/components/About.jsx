@@ -34,13 +34,22 @@ const AboutLinkContainer = styled("div")`
 `
 
 const AboutLink = styled("a")`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 1.5em;
     font-weight: 600;
     line-height: 1.9;
     text-decoration: none;
     color: currentColor;
 
-    span {
+    .link-icon {
+        width: 25px;
+        height: 25px;
+        margin-right: .5rem;
+    }
+
+    span:not(.link-text) {
         margin-left: 1em;
         transform: translateX(-8px);
         display: inline-block;
@@ -88,7 +97,8 @@ const About = ({ bio, socialLinks }) => (
                     key={i}
                     href={social.about_link[0].spans[0].data.url}
                     target="_blank" rel="noopener noreferrer">
-                    {social.about_link[0].text}
+                    {social.link_icon && <img className='link-icon' src={social.link_icon.url} alt={`${social.about_link[0].text} Icon `} />}
+                    <span className='link-text'>{social.about_link[0].text}</span>
                     <span>&#8594;</span>
                 </AboutLink>
             ))}

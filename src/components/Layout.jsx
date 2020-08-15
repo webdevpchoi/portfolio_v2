@@ -25,10 +25,6 @@ const LayoutContainer = styled.div`
         padding-left: ${dimensions.paddingHorizontalMobile}em;
         padding-right: ${dimensions.paddingHorizontalMobile}em;
     }
-
-    .Layout__content {
-        padding-bottom: 5em;
-    }
 `;
 
 const Layout = ({ children }) => (

@@ -220,6 +220,12 @@ export const query = graphql`
                         about_bio
                         about_links {
                             about_link
+                            link_icon {
+                              ... on PRISMIC__ImageLink {
+                                _linkType
+                                url
+                              }
+                            }
                         }
                     }
                 }
