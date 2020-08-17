@@ -160,7 +160,6 @@ const ProjectCard = ({
   title,
   description,
   thumbnail,
-  uid,
   link,
 }) => (
   <ProjectCardContainer href={link}>
@@ -185,5 +184,4 @@ ProjectCard.propTypes = {
   thumbnail: PropTypes.object.isRequired,
   title: PropTypes.array.isRequired,
   description: PropTypes.array.isRequired,
-  uid: PropTypes.string.isRequired,
 }

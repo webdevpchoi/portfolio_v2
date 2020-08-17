@@ -63,6 +63,7 @@ const Work = ({ projects, meta }) => (
                         description={project.node.project_preview_description}
                         thumbnail={project.node.project_preview_thumbnail}
                         uid={project.node._meta.uid}
+                        link={project.node.project_link ? project.node.project_link.url : null}
                     />
                 ))}
             </>
@@ -95,6 +96,11 @@ export const query = graphql`
                         project_preview_thumbnail
                         project_category
                         project_post_date
+                        project_link {
+                            ... on PRISMIC__ExternalLink {
+                              url
+                            }
+                        }
                         _meta {
                             uid
                         }

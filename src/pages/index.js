@@ -182,9 +182,7 @@ const RenderBody = ({ home, projects, meta }) => (
           description={project.node.project_preview_description}
           thumbnail={project.node.project_preview_thumbnail}
           uid={project.node._meta.uid}
-          link={
-            project.node.project_link ? project.node.project_link.url : null
-          }
+          link={project.node.project_link ? project.node.project_link.url : null}
         />
       ))}
       <WorkAction to={"/work"}>
@@ -199,11 +197,13 @@ const RenderBody = ({ home, projects, meta }) => (
 )
 
 export default ({ data }) => {
-  //Required check for no data being returned
+  // select specific homepage projects to show
+  const homepageProjects = ['fashion nova', 'the ridge wallet', 'stikwood', 'alleyoop', 'the detox market' ];
   const doc = data.prismic.allHomepages.edges.slice(0, 1).pop()
-  const projects = data.prismic.allProjects.edges.slice(0, 5)
+  const projects = data.prismic.allProjects.edges.filter(project => homepageProjects.includes(project.node.project_title[0].text.toLowerCase()));
   const meta = data.site.siteMetadata
 
+  //Required check for no data being returned
   if (!doc || !projects) return null
 
   return (
