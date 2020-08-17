@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Prist | Gatsby & Prismic Starter`,
-        description: `A starter powered by Gatsby and Prismic to showcase portfolios and blogs.`,
-    author: `Marguerite Roth | marguerite.io`,
+    title: `Phillip Choi | Portfolio`,
+    description: `A showcase of experience by yours truly.`,
+    author: `Phillip Choi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -29,18 +29,6 @@ module.exports = {
             repositoryName: 'portfoliov2', // (REQUIRED, replace with your own)
             linkResolver: () => post => `/${post.uid}`,
         }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-prismic-starter-prist`,
-        short_name: `prist`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/oscar-icon.png`, // This path is relative to the root of the site.
-      },
     },
     // https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
     {
