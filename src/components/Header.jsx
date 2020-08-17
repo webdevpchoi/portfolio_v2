@@ -8,6 +8,10 @@ import Logo from "components/_ui/Logo";
 const HeaderContainer = styled("div")`
     padding-top: 3.75em;
     padding-bottom: 3em;
+
+    @media (max-width: 425px) {
+        padding-bottom: 0;
+    }
 `
 
 const HeaderContent = styled("div")`
