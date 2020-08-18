@@ -30,6 +30,18 @@ module.exports = {
             linkResolver: () => post => `/${post.uid}`,
         }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Phillip Choi | Portfolio`,
+        short_name: `Portfolio`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/atom.png`, // This path is relative to the root of the site.
+      },
+    },
     // https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
     {
         resolve: `gatsby-plugin-google-analytics`,
