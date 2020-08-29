@@ -40,7 +40,7 @@ const Hero = styled("div")`
   h1:nth-of-type(2) {
     a {
       &:nth-of-type(1) {
-        color: ${colors.orange500};
+        color: ${colors.teal500};
       }
       &:nth-of-type(2) {
         color: ${colors.purple500};
@@ -51,8 +51,8 @@ const Hero = styled("div")`
 
       &:hover {
         &:nth-of-type(1) {
-          color: ${colors.orange600};
-          background-color: ${colors.orange200};
+          color: ${colors.teal600};
+          background-color: ${colors.teal200};
         }
         &:nth-of-type(2) {
           color: ${colors.purple600};
@@ -69,13 +69,13 @@ const Hero = styled("div")`
   h1:nth-of-type(3) {
     a {
       &:nth-of-type(1) {
-        color: ${colors.teal500};
+        color: ${colors.orange500};
       }
 
       &:hover {
         &:nth-of-type(1) {
-          color: ${colors.teal600};
-          background-color: ${colors.teal200};
+          color: ${colors.orange600};
+          background-color: ${colors.orange200};
         }
       }
     }
@@ -126,7 +126,7 @@ const WorkAction = styled(Link)`
   }
 `
 
-const RenderBody = ({ home, projects, meta }) => (
+const RenderBody = ({ home, siteImage, projects, meta }) => (
   <>
     <Helmet
       title={meta.title}
@@ -147,6 +147,10 @@ const RenderBody = ({ home, projects, meta }) => (
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: siteImage,
         },
         {
           name: `twitter:card`,
@@ -199,16 +203,16 @@ const RenderBody = ({ home, projects, meta }) => (
 export default ({ data }) => {
   // select specific homepage projects to show
   const homepageProjects = ['fashion nova', 'the ridge wallet', 'stikwood', 'alleyoop', 'the detox market' ];
-  const doc = data.prismic.allHomepages.edges.slice(0, 1).pop()
+  const doc = data.prismic.allHomepages.edges.slice(0, 1).pop();
   const projects = data.prismic.allProjects.edges.filter(project => homepageProjects.includes(project.node.project_title[0].text.toLowerCase()));
-  const meta = data.site.siteMetadata
+  const meta = data.site.siteMetadata;
 
   //Required check for no data being returned
   if (!doc || !projects) return null
 
   return (
     <Layout>
-      <RenderBody home={doc.node} projects={projects} meta={meta} />
+      <RenderBody siteImage={doc.node.site_image.url} home={doc.node} projects={projects} meta={meta} />
     </Layout>
   )
 }
@@ -226,6 +230,7 @@ export const query = graphql`
         edges {
           node {
             hero_title
+            site_image
             hero_button_text
             hero_button_link {
               ... on PRISMIC__ExternalLink {
